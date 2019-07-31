@@ -15,19 +15,12 @@ public class ConfigClientApplication {
     }
 
 
-    @Value("${foo}")
-    String foo;
+    @Value("${spring.rabbitmq.username}")
+    String username;
 
-    @Value("${spring.redis.timeout}")
-    int timeout;
-
-    @RequestMapping(value = "/hi")
-    public String hi(){
-        return foo;
-    }
 
     @RequestMapping(value = "/ha")
-    public int ha(){
-        return timeout;
+    public String ha(){
+        return username;
     }
 }
